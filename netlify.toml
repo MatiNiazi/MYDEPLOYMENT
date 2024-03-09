@@ -1,16 +1,15 @@
-
 [build]
   command = "npm run build"
-  functions = "functions"  # Specify the correct functions directory
-  publish = "mydvs/build"  # Specify the correct build directory
-
-[[redirects]]
-  from = "/*"
-  to = "/mydvs/build/index.html"
-  status = 200
-
+  publish = "mydvs/build"
+  functions = "server/functions"
+  
 [[headers]]
   for = "/*"
   [headers.values]
     Access-Control-Allow-Origin = "*"
     Cache-Control = "public, max-age=0, must-revalidate"
+
+[[redirects]]
+  from = "/*"
+  status = 200
+  to = "/mydvs/build/index.html"
