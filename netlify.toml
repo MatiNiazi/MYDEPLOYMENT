@@ -1,11 +1,12 @@
+
 [build]
   command = "npm run build"
-  functions = "functions"  # The directory where your serverless functions are located
-  publish = "build"  # The directory where your built React app is located
+  functions = "functions"  # Specify the correct functions directory
+  publish = "mydvs/build"  # Specify the correct build directory
 
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/mydvs/build/index.html"
   status = 200
 
 [[headers]]
