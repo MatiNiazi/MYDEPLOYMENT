@@ -1,0 +1,15 @@
+[build]
+  command = "npm run build"
+  functions = "functions"  # The directory where your serverless functions are located
+  publish = "build"  # The directory where your built React app is located
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=0, must-revalidate"

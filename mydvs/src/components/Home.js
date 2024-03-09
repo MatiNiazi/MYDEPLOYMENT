@@ -35,7 +35,7 @@ const Home = () => {
       const formData = new FormData();
       formData.append('image', imageFile);
 
-      const uploadResponse = await fetch('http://localhost:3100/upload', {
+      const uploadResponse = await fetch('/.netlify/functions/server/upload', {
         method: 'POST',
         body: formData,
       });
